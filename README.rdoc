@@ -1,0 +1,7 @@
+=My Cms
+
+A thousand thanks to @modestrubyist from http://www.themodestrubyist.com/ , without whose tutorials on the subject of Rails 3 Engines I would be nowhere.
+
+Also thanks to the thoughtbot team and clearance, which I looked at to learn more. http://robots.thoughtbot.com/
+
+And also finally thanks to https://github.com/elricstorm/baby_dove which is where I copied most of this from.  
