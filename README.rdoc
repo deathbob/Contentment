@@ -13,3 +13,5 @@ A thousand thanks to @modestrubyist from http://www.themodestrubyist.com/ , with
 Also thanks to the thoughtbot team and the clearance gem, which I looked at to learn more. https://github.com/thoughtbot/clearance
 
 And also finally thanks to https://github.com/elricstorm/baby_dove which is where I copied most of this from.  
+
+http://edgeapi.rubyonrails.org/classes/Rails/Engine.html
