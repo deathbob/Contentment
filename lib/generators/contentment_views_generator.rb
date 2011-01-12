@@ -9,6 +9,7 @@ class ContentmentViewsGenerator < Rails::Generators::Base
 
 	def install
 		puts "Installing Views"
+		template 'contents_helper.rb', 'app/helpers/contents_helper.rb'
 		directory 'contents', 'app/views/contents'
 	end
 
