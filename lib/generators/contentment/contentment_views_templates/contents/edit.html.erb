@@ -1,0 +1,56 @@
+<%= link_to 'New content', new_content_path, :class => 'button', :id => "add-content" %>
+<%= link_to "Back to Content List", contents_path, :class => 'button', :id => 'back-to-contents' %>
+<%= content_for :scripts do %>
+  <script src='/javascripts/tinymce_hammer.js' type='text/javascript'></script> 
+  <script type='text/javascript'> 
+    TinymceHammer = {
+      init : function() {
+        var init = { paste_convert_headers_to_strong : true, paste_convert_middot_lists : true, paste_remove_spans : true, paste_remove_styles : true, paste_strip_class_attributes : true, theme : "advanced", theme_advanced_buttons1 : "undo,redo,cut,copy,paste,pastetext,|,bold,italic,strikethrough,blockquote,charmap,bullist,numlist,removeformat,|,link,unlink,image,|,cleanup,code", theme_advanced_buttons2 : "", theme_advanced_buttons3 : "", theme_advanced_toolbar_align : "left", theme_advanced_toolbar_location : "top", valid_elements : "a[href|title,blockquote[cite],br,caption,cite,code,dl,dt,dd,em,i,img[src|alt|title|width|height|align],li,ol,p,pre,q[cite],small,strike,strong/b,sub,sup,u,ul", setup : function(ed) { ed.onKeyUp.add(function(ed, evt) {	var iframe = document.getElementById('content_body_ifr'); var paul = iframe.contentWindow.document.body.innerHTML; $('.content_preview_body').html(paul); }); } };
+        init.mode = 'specific_textareas';
+        init.editor_selector = 'tinymce';
+        init.plugins = 'paste';
+        init.language = 'en';
+      
+        tinyMCE.init(init);
+      },
+      addEditor : function(dom_id) {
+        tinyMCE.execCommand('mceAddControl', true, dom_id);
+      }
+    }
+    DomReady.ready(TinymceHammer.init);
+  </script>
+<% end %>
+<div class="panel clearfix">
+    <h3>Edit content</h3>
+    <% form_for(@content) do |f| %>
+      <div class="tools">
+        <%= link_to 'Back', contents_path %>
+        <%= f.submit 'Update' %>
+      </div>  
+      <div class="main">
+        <%= f.text_field :title, :placeholder => "Content Title", :class => 'title' %>
+        <%= f.label :body %>
+        <%= f.tinymce :body %>
+      </div>
+      <div class="side">
+        <p>
+            <%= f.label :type %>
+            <%= f.select :tipe, content_tipe_options %>
+        </p>
+        <p>
+            <%= f.label "DOM id" %>
+            <%= f.text_field :dom_id %>
+        </p>
+
+        <p>
+            <%= f.label :position %>
+            <%= f.text_field :position %>
+        </p>
+        <p>
+            <%= f.label :visible %>
+            <%= f.check_box :visible%>
+        </p>
+      </div>
+    <% end %>
+</div>
+<%= render :partial => "preview", :locals => { :form => '.edit_content', :content => @content } %>

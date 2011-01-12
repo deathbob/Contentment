@@ -1,0 +1,28 @@
+<div id="cms">
+    <%= link_to 'New content', new_content_path, :class => 'button', :id => "add-content" %>
+    <h1 class="intro">Content Management</h1>
+    <table class="alternating admin admin-table" id="content-table">
+      <tr>
+         <th>Title</th>
+         <th>Type</th>
+         <th>DOM ID</th>  
+         <th>Position</th>
+         
+         <th></th> 
+      </tr>
+
+    <% @contents.each do |content| %>
+      <tr class=<%= cycle("even", "odd")%>>
+        <td><strong><%=h content.title %></strong></td>
+        <td><%=h content.tipe %></td>
+        <td><%=h content.dom_id %></td>    
+        <td><%=h content.position %></td>
+        <td style="width: 150px;">
+          <%= link_to 'Show', content %>
+          <%= link_to 'Edit', edit_content_path(content) %>
+          <%= link_to 'Destroy', content, :confirm => 'Are you sure?', :method => :delete %>
+       </td>
+      </tr>
+    <% end %>
+    </table>
+</div>

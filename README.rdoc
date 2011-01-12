@@ -1,7 +1,15 @@
-=My Cms
+=Contentment
+
+===Contentment is a extremely basic Content Management System.  
+
+The primary advantage it offers over a roll-your-own CMS is consistency.  
+Use Contentment whenever you need a basic CMS and you can stop re-inventing the wheel and start pumping code.  
+
+
+==Thanks
 
 A thousand thanks to @modestrubyist from http://www.themodestrubyist.com/ , without whose tutorials on the subject of Rails 3 Engines I would be nowhere.
 
-Also thanks to the thoughtbot team and clearance, which I looked at to learn more. http://robots.thoughtbot.com/
+Also thanks to the thoughtbot team and the clearance gem, which I looked at to learn more. https://github.com/thoughtbot/clearance
 
 And also finally thanks to https://github.com/elricstorm/baby_dove which is where I copied most of this from.  
