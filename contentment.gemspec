@@ -5,11 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = %q{contentment}
-  s.version = "0.3.0"
+  s.version = "0.3.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Bob Larrick"]
   s.date = %q{2011-01-11}
+  s.description = %q{Rails Engine for dead simple content management.  }
   s.email = %q{larrick@gmail.com}
   s.extra_rdoc_files = [
     "README.rdoc"
@@ -277,8 +278,9 @@ Gem::Specification.new do |s|
   ]
   s.homepage = %q{https://github.com/deathbob/Contentment}
   s.require_paths = ["lib"]
+  s.rubyforge_project = %q{contentment}
   s.rubygems_version = %q{1.3.7}
-  s.summary = %q{Engine for dead simple content management}
+  s.summary = %q{Dead simple content management.}
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
