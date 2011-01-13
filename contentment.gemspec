@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{contentment}
-  s.version = "0.3.2"
+  s.version = "0.4.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Bob Larrick"]
-  s.date = %q{2011-01-11}
+  s.date = %q{2011-01-12}
   s.description = %q{Rails Engine for dead simple content management.  }
   s.email = %q{larrick@gmail.com}
   s.extra_rdoc_files = [
@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
     "lib/generators/contentment/contentment_views_templates/contents/show.html.erb",
     "lib/generators/contentment/contentment_views_templates/contents_helper.rb",
     "lib/generators/contentment/templates/content.rb",
+    "lib/generators/contentment/templates/content_test.rb",
     "lib/generators/contentment/templates/contents_controller.rb",
     "lib/generators/contentment/templates/migration.rb",
     "lib/generators/contentment_generator.rb",
