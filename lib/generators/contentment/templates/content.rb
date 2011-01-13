@@ -29,19 +29,11 @@ class Content < ActiveRecord::Base
 
 	private
   	def adjust_positions
-	
-			# return true unless changed.include?('position')
-			# 
-			# @contents = brothers.order('position ASC')
-			# @contents.each_with_index do |x, idx|
-			# 	unless x.position > self.position
-			# 		if x.position
-			# 			x.update_attribute :position, x.position + 1
-			# 		else
-			# 			x.update_attribute :position, self.position + idx
-			# 		end
-			# 	end
-			# end
+			return true unless changed.include?('position')	
+			return true unless brothers.map{|x| x.position}.include?(self.position)
+			
+			brothers.where("position < ?", self.position).update_all("position = (position - 1)")
+			brothers.where("position >= ?", self.position).update_all("position = (position + 1)")
 		end
 		
 		

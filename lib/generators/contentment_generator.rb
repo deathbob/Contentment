@@ -25,6 +25,7 @@ class ContentmentGenerator < Rails::Generators::Base
 			# Need to figure out how to ask the user if they would like to overwrite their model.
 		else
 			template 'content.rb', content_model
+			template 'content_test.rb', 'test/unit/content_test.rb'
 		end
 		
 		contents_controller = 'app/controllers/contents_controller.rb'
