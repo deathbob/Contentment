@@ -1,6 +1,6 @@
 =Contentment
 
-===Contentment is a extremely basic Content Management System.  
+===Contentment is a extremely basic Content Management System for Ruby On Rails.  
 
 How often do your clients want to manage / edit some piddly little portion of the site you're building for them?
 Every time?  Yeah me too.  If what you need is a way for your clients to manage the FAQ or Testimonials, contentment is for you.
@@ -16,21 +16,27 @@ and run
 	bundle install
 	
 ==Use Contentment
+This will create the Content model and a migration to add the contents table to your database, if it doesn't already exist.
+It will also create contents_controller.rb for you with all the CRUD already done.
 	rails g contentment
 	rake db:migrate
-This will create the Content model and a migration to add the contents table to your database, if it doesn't already exist.
-It will also create contents_controller.rb for you with all the CRUD already done.  
-	rails g contentment_views 
-Will create the views to manage your Content.  
 
-Fire up the server and you're ready to go.
+This will create the views to manage your Content.  
+	rails g contentment_views 
+
+
+Fire up the server and you're ready to go.  
 
 ==Details
 title and body are pretty self explanatory, perfect for question and answer, or header and paragraph.
+
 tipe is not type to get around rails polymorphic associations stuff and exists because then you can 
 do things like Content.for_FAQ or Content.for_navigation.  
+
 dom_id is rarely used, but sometimes you need to manipulate Content programmatically and this is there for that.
+
 position, because clients love ordering stuff around.  
+
 visible, because clients like to hide things from their users.  
 
 ==Live Preview of Content on Edit
@@ -66,4 +72,9 @@ Also thanks to the thoughtbot team and the clearance gem, which I looked at to l
 
 And also finally thanks to https://github.com/elricstorm/baby_dove which is where I copied most of this from.  
 
-http://edgeapi.rubyonrails.org/classes/Rails/Engine.html
+Read More about engines - http://edgeapi.rubyonrails.org/classes/Rails/Engine.html
+
+==TODO
+*Get TinyMCE Integrated so there's no external dependancies.
+*Get an example app using contentment up somewhere to show it off.
+
