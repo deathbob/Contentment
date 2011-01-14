@@ -1,36 +1,34 @@
 <%= link_to 'New content', new_content_path, :class => 'button', :id => "add-content" %>
 <%= link_to "Back to Content List", contents_path, :class => 'button', :id => 'back-to-contents' %>
 <div class="panel clearfix">
-    <h3>Edit content</h3>
-    <% form_for(@content) do |f| %>
-      <div class="tools">
-        <%= link_to 'Back', contents_path %>
-        <%= f.submit 'Update' %>
-      </div>  
-      <div class="main">
-        <%= f.text_field :title, :placeholder => "Content Title", :class => 'title' %>
-        <%= f.label :body %>
-        <%= f.text_area :body %>
-      </div>
-      <div class="side">
-        <p>
-            <%= f.label :type %>
-            <%= f.select :tipe, content_tipe_options %>
-        </p>
-        <p>
-            <%= f.label "DOM id" %>
-            <%= f.text_field :dom_id %>
-        </p>
-
-        <p>
-            <%= f.label :position %>
-            <%= f.text_field :position %>
-        </p>
-        <p>
-            <%= f.label :visible %>
-            <%= f.check_box :visible%>
-        </p>
-      </div>
-    <% end %>
+  <h3>Edit content</h3>
+  <% form_for(@content) do |f| %>
+    <p>
+      <%= f.text_field :title, :placeholder => "Content Title", :class => 'title' %>
+    </p>
+    <p>
+      <%= f.label :body %>
+      <%= f.text_area :body %>
+    </p>
+    <p>
+      <%= f.label :type %>
+      <%= f.select :tipe, content_tipe_options %>
+    </p>
+    <p>
+      <%= f.label "DOM id" %>
+      <%= f.text_field :dom_id %>
+    </p>
+    <p>
+      <%= f.label :position %>
+      <%= f.text_field :position %>
+    </p>
+    <p>
+      <%= f.label :visible %>
+      <%= f.check_box :visible%>
+    </p>
+    <%= link_to 'Back', contents_path %>
+    <%= f.submit 'Update' %>
+      
+  <% end %>
 </div>
 <%= render :partial => "preview", :locals => { :form => '.edit_content', :content => @content } %>

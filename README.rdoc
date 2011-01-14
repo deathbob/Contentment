@@ -2,8 +2,60 @@
 
 ===Contentment is a extremely basic Content Management System.  
 
+How often do your clients want to manage / edit some piddly little portion of the site you're building for them?
+Every time?  Yeah me too.  If what you need is a way for your clients to manage the FAQ or Testimonials, contentment is for you.
+It's blindingly simple to use and it will save you time.  
+
 The primary advantage it offers over a roll-your-own CMS is consistency.  
 Use Contentment whenever you need a basic CMS and you can stop re-inventing the wheel and start pumping code.  
+
+==Get Contentment
+Add it to your gemfile
+	gem 'contentment'
+and run 
+	bundle install
+	
+==Use Contentment
+	rails g contentment
+	rake db:migrate
+This will create the Content model and a migration to add the contents table to your database, if it doesn't already exist.
+It will also create contents_controller.rb for you with all the CRUD already done.  
+	rails g contentment_views 
+Will create the views to manage your Content.  
+
+Fire up the server and you're ready to go.
+
+==Details
+title and body are pretty self explanatory, perfect for question and answer, or header and paragraph.
+tipe is not type to get around rails polymorphic associations stuff and exists because then you can 
+do things like Content.for_FAQ or Content.for_navigation.  
+dom_id is rarely used, but sometimes you need to manipulate Content programmatically and this is there for that.
+position, because clients love ordering stuff around.  
+visible, because clients like to hide things from their users.  
+
+==Live Preview of Content on Edit
+
+Slap this in your application.js to get live preview of the title attribute of content
+	$('.edit_content').keyup(function(){
+		var bob = $('#content_title').val();
+	 	$('.content_preview_title').html(bob);
+	})
+I'm using TinyMCE Hammer to get TinyMCE in my projects, and if you install it too you can have live preview of the body of your content pretty easily.
+(I'm working on getting TinyMCE included in this gem)
+TinyMCE is nice because your clients probably want the ability to add line breaks and other styling without having to learn HTML.
+So.  Install the TinyMCE Hammer plugin https://github.com/trevorrowe/tinymce_hammer or http://tinymcehammer.lanalot.com/ , I don't know which is canonical.
+Then add 
+	<%= yield :scripts %>
+to the <head> section of whatever layout (probably application.html.erb) is rendered around the contents/edit.html.erb file.
+Donezo.  You should now see the changes made to the title and body of your content on the edit view live and in real time in the preview area.
+Clients love that.  
+
+==That's It!
+If we did anything else it wouldn't be simple anymore.  
+
+Questions, Thoughts, Comments to larrick@gmail.com
+
+
 
 
 ==Thanks

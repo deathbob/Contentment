@@ -1,37 +1,34 @@
 <div class="panel clearfix">
-    <h3>New content</h3>
-    <% form_for(@content) do |f| %>
-    <div class="tools">
-        <%= link_to 'Cancel', contents_path %>
-        <%= f.submit 'Create' %>
-    </div>  
 
-    <div class="main">
-        <%= f.text_field :title, :placeholder => "Content Title", :class => 'title' %>
 
-        <%= f.label :body %>
-        <%= f.text_area :body %>
-
-    </div>
-    <div class="side">
-        <p>
-            <%= f.label :type %>
-            <%= f.select :tipe, content_tipe_options %>
-        </p>
-        <p>
-            <%= f.label "DOM id" %>
-            <%= f.text_field :dom_id %>
-        </p>
-
-        <p>
-            <%= f.label :position %>
-            <%= f.text_field :position %>
-        </p>
-        <p>
-            <%= f.label :visible %>
-            <%= f.check_box :visible%>
-        </p>
-    </div>
-    <% end %>
+  <h3>New content</h3>
+  <% form_for(@content) do |f| %>
+    <p>
+      <%= f.text_field :title, :placeholder => "Content Title", :class => 'title' %>
+    </p>
+    <p>
+      <%= f.label :body %>
+      <%= f.text_area :body %>
+    </p>
+    <p>
+      <%= f.label :type %>
+      <%= f.select :tipe, content_tipe_options %>
+    </p>
+    <p>
+      <%= f.label "DOM id" %>
+      <%= f.text_field :dom_id %>
+    </p>
+    <p>
+      <%= f.label :position %>
+      <%= f.text_field :position %>
+    </p>
+    <p>
+      <%= f.label :visible %>
+      <%= f.check_box :visible%>
+    </p>
+    <%= link_to 'Cancel', contents_path %>
+    <%= f.submit 'Create' %>
+  
+  <% end %>
 </div>
 <%= render :partial => "preview", :locals => { :form => '.new_content', :content => @content } %>
