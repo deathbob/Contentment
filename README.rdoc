@@ -16,22 +16,20 @@ and run
 	bundle install
 	
 ==Use Contentment
-This will create the Content model and a migration to add the contents table to your database, if it doesn't already exist.
-It will also create contents_controller.rb for you with all the CRUD already done.
 	rails g contentment
 	rake db:migrate
-
-This will create the views to manage your Content.  
+This will create the Content model and a migration to add the contents table to your database, if it doesn't already exist.
+It will also create contents_controller.rb for you with all the CRUD already done.
 	rails g contentment_views 
-
+This will create the views to manage your Content.  
 
 Fire up the server and you're ready to go.  
 
 ==Details
 title and body are pretty self explanatory, perfect for question and answer, or header and paragraph.
 
-tipe is not type to get around rails polymorphic associations stuff and exists because then you can 
-do things like Content.for_FAQ or Content.for_navigation.  
+tipe is not type to get around rails polymorphic associations, and exists so you can 
+do things like Content.for_faq or Content.for_navigation.  
 
 dom_id is rarely used, but sometimes you need to manipulate Content programmatically and this is there for that.
 
@@ -57,7 +55,7 @@ Donezo.  You should now see the changes made to the title and body of your conte
 Clients love that.  
 
 ==That's It!
-If we did anything else it wouldn't be simple anymore.  
+If it did anything else it wouldn't be simple anymore.  
 
 Questions, Thoughts, Comments to larrick@gmail.com
 
@@ -75,6 +73,6 @@ And also finally thanks to https://github.com/elricstorm/baby_dove which is wher
 Read More about engines - http://edgeapi.rubyonrails.org/classes/Rails/Engine.html
 
 ==TODO
-*Get TinyMCE Integrated so there's no external dependancies.
-*Get an example app using contentment up somewhere to show it off.
+	* Get TinyMCE Integrated so there's no external dependancies.
+	* Get an example app using contentment up somewhere to show it off.
 
