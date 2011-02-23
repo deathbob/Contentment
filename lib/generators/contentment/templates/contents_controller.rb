@@ -38,6 +38,7 @@ class ContentsController < ApplicationController
 
   def update
     @content = Content.find(params[:id])
+    @content.update_attributes(params[:content])
     respond_to do |format|
       if @content.save
         format.html { redirect_to edit_content_path(@content.id), :notice =>  'Content was successfully updated.'  }

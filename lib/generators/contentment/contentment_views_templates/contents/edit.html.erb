@@ -35,38 +35,6 @@
 <%= link_to "Back to Content List", contents_path, :class => 'button', :id => 'back-to-contents' %>
 <div>
   <h3>Edit content</h3>
-  <% form_for(@content) do |f| %>
-    <p>
-      <%= f.text_field :title, :placeholder => "Content Title", :class => 'title' %>
-    </p>
-    <p>
-      <%= f.label :body %>
-      <%= f.text_area :body %>
-    </p>
-    <p>
-      <%= f.label :type %>
-      <%= f.select :tipe, content_tipe_options %>
-    </p>
-    <p>
-      <%= f.label "DOM id" %>
-      <%= f.text_field :dom_id %>
-    </p>
-    <p>
-      <%= f.label :position %>
-      <%= f.text_field :position %>
-    </p>
-    <p>
-      <%= f.label :visible %>
-      <%= f.check_box :visible%>
-    </p>
-    <p>
-      <%= f.label :link %>
-      <%= f.check_box :link %>
-    </p>
-
-    <%= link_to 'Back', contents_path %>
-    <%= f.submit 'Update' %>
-
-  <% end %>
+  <%= render :partial => "form" %>
 </div>
 <%= render :partial => "preview", :locals => { :form => '.edit_content', :content => @content } %>

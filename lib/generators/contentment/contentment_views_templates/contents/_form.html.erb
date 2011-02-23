@@ -1,0 +1,31 @@
+<%= form_for(@content) do |f| %>
+  <p>
+    <%= f.text_field :title, :placeholder => "Content Title" %>
+  </p>
+  <p>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.label :type %>
+    <%= f.select :tipe, content_tipe_options %>
+  </p>
+  <p>
+    <%= f.label "DOM id" %>
+    <%= f.text_field :dom_id %>
+  </p>
+  <p>
+    <%= f.label :position %>
+    <%= f.text_field :position %>
+  </p>
+  <p>
+    <%= f.label :visible %>
+    <%= f.check_box :visible%>
+  </p>
+  <p>
+    <%= f.label :link %>
+    <%= f.text_field :link %>
+  </p>
+  <%= link_to 'Back', contents_path %>
+  <%= f.submit %>
+<% end %>

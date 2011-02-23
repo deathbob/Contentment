@@ -54,11 +54,12 @@ and where you want to go in the link field and I'm sure you can fill in the rest
 
 ==Live Preview of Content on Edit
 
+If you're using jQuery
+
 Slap this in your application.js to get live preview of the title attribute of content
-	$('.edit_content').keyup(function(){
-		var bob = $('#content_title').val();
-	 	$('.content_preview_title').html(bob);
-	})
+    $(document).ready(function(){$('.edit_content').keyup(function(){$('.content_preview_title').html($('#content_title').val());});})
+
+
 I'm using TinyMCE Hammer to get TinyMCE in my projects, and if you install it too you can have live preview of the body of your content pretty easily.
 (I'm working on getting TinyMCE included in this gem)
 TinyMCE is nice because your clients probably want the ability to add line breaks and other styling without having to learn HTML.
