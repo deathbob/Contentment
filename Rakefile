@@ -2,11 +2,11 @@ begin
   require "jeweler"
   Jeweler::Tasks.new do |gem|
     gem.name = "contentment"
-    gem.summary = "Dead simple content management."
-		gem.rubyforge_project = 'contentment'
-		gem.description = "Rails Engine for dead simple content management.  "
+    gem.summary = "Rails Engine for simple content management."
+    gem.rubyforge_project = 'contentment'
+    gem.description = "Rails Engine for simple content management.  See readme on github for details."
     gem.email = "larrick@gmail.com"
-		gem.homepage = 'https://github.com/deathbob/Contentment'
+    gem.homepage = 'https://github.com/deathbob/Contentment'
     gem.authors = ["Bob Larrick"]
     gem.files = Dir["{lib}/**/*", "{app}/**/*", "{config}/**/*", "{public}/**/*"]
   end

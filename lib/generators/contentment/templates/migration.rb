@@ -6,12 +6,12 @@ class CreateContents < ActiveRecord::Migration
     # Birds Table
     create_table :contents do |t|
       t.string   :title
-			t.text     :body
-			t.string   :tipe
-			t.string   :dom_id
-			t.integer  :position
-			t.boolean  :visible	
-			
+      t.text     :body
+      t.string   :tipe
+      t.string   :dom_id
+      t.integer  :position
+      t.boolean  :visible  
+      t.string   :link
       t.timestamps
     end
 

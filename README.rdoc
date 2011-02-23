@@ -4,7 +4,7 @@
 
 How often do your clients want to manage / edit some piddly little portion of the site you're building for them?
 Every time?  Yeah me too.  If what you need is a way for your clients to manage the FAQ or Testimonials, contentment is for you.
-It's blindingly simple to use and it will save you time.  
+It's simple to use and will save you time.
 
 The primary advantage it offers over a roll-your-own CMS is consistency.  
 Use Contentment whenever you need a basic CMS and you can stop re-inventing the wheel and start pumping code.  
@@ -16,7 +16,7 @@ and run
 	bundle install
 	
 ==Use Contentment
-	rails g contentment
+	rails generate contentment
 	rake db:migrate
 This will create the Content model and a migration to add the contents table to your database, if it doesn't already exist.
 It will also create contents_controller.rb for you with all the CRUD already done.
@@ -26,16 +26,31 @@ This will create the views to manage your Content.
 Fire up the server and you're ready to go.  
 
 ==Details
-title and body are pretty self explanatory, perfect for question and answer, or header and paragraph.
+:title and :body are pretty self explanatory, perfect for question and answer, or header and paragraph.
 
-tipe is not type to get around rails polymorphic associations, and exists so you can 
-do things like Content.for_faq or Content.for_navigation.  
+:tipe is not type to get around rails polymorphic associations, and exists to help you keep track of what
+Content goes on what pages.  Add your own values to the @tipes array 
+    @tipes = [
+  	# "Billboard",
+  	# "What You Learn",
+  	# "Tips",
+  	# "Questions Copy",
+  	# "FAQ",
+  	# "Examples",
+  	# "Testimonial",
+  	# "Navigation",
+  	]
+and you'll get things like Content.for_faq or Content.for_navigation.  Be careful about changing tipes after you've
+been up and running for a while or you might orphan Content.
 
-dom_id is rarely used, but sometimes you need to manipulate Content programmatically and this is there for that.
+:dom_id is rarely used, but sometimes you need to manipulate Content on the page with JavaScript and this is there for that.
 
-position, because clients love ordering stuff around.  
+:position will help you control the order of things in lists.
 
-visible, because clients like to hide things from their users.  
+:visible will help you hide things without deleting them.
+
+:link will allow you to have your navigation editable by your client.  Put what you want to show up in the title,
+and where you want to go in the link field and I'm sure you can fill in the rest.  
 
 ==Live Preview of Content on Edit
 
@@ -68,7 +83,7 @@ A thousand thanks to @modestrubyist from http://www.themodestrubyist.com/ , with
 
 Also thanks to the thoughtbot team and the clearance gem, which I looked at to learn more. https://github.com/thoughtbot/clearance
 
-And also finally thanks to https://github.com/elricstorm/baby_dove which is where I copied most of this from.  
+And also finally thanks to https://github.com/elricstorm/baby_dove which I used as a template for this whole engine.
 
 Read More about engines - http://edgeapi.rubyonrails.org/classes/Rails/Engine.html
 

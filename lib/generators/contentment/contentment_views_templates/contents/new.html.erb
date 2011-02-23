@@ -1,10 +1,8 @@
-<div class="panel clearfix">
-
-
+<div>
   <h3>New content</h3>
   <% form_for(@content) do |f| %>
     <p>
-      <%= f.text_field :title, :placeholder => "Content Title", :class => 'title' %>
+      <%= f.text_field :title, :placeholder => "Content Title" %>
     </p>
     <p>
       <%= f.label :body %>
@@ -26,9 +24,14 @@
       <%= f.label :visible %>
       <%= f.check_box :visible%>
     </p>
+    <p>
+      <%= f.label :link %>
+      <%= f.check_box :link %>
+    </p>
+
     <%= link_to 'Cancel', contents_path %>
     <%= f.submit 'Create' %>
-  
+
   <% end %>
 </div>
 <%= render :partial => "preview", :locals => { :form => '.new_content', :content => @content } %>

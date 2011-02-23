@@ -1,22 +1,17 @@
-<div class="clear">
-   <p>
-     <b>Title:</b>
-     <%=h @content.title %>
-   </p>
-
-   <p>
-     <b>Body:</b>
-     <%=h @content.body %>
-   </p>
-
-   <p>
-     <b>Type:</b>
-     <%=h @content.tipe %>
-   </p>
-
-
-   <%= link_to 'Edit', edit_content_path(@content) %> |
-   <%= link_to 'Back', contents_path %>
-
-   <%= link_to "new", new_content_path %>
+<div>
+  <p>
+    <b>Title:</b>
+    <%=h @content.title %>
+  </p>
+  <p>
+    <b>Body:</b>
+    <%=h @content.body %>
+  </p>
+  <p>
+    <b>Type:</b>
+    <%=h @content.tipe %>
+  </p>
+  <%= link_to 'Edit', edit_content_path(@content) %> | 
+  <%= link_to 'Back', contents_path %> | 
+  <%= link_to "new", new_content_path %>
 </div>
