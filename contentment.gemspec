@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = %q{contentment}
-  s.version = "0.5.1"
+  s.version = "0.6.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Bob Larrick"]
-  s.date = %q{2011-01-17}
-  s.description = %q{Rails Engine for dead simple content management.  }
+  s.date = %q{2011-02-23}
+  s.description = %q{Rails Engine for simple content management.  See readme on github for details.}
   s.email = %q{larrick@gmail.com}
   s.extra_rdoc_files = [
     "README.rdoc"
@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
     "lib/contentment.rb",
     "lib/contentment/engine.rb",
     "lib/extensions/action_controller/base.rb",
+    "lib/generators/contentment/contentment_views_templates/contents/_form.html.erb",
     "lib/generators/contentment/contentment_views_templates/contents/_preview.html.erb",
     "lib/generators/contentment/contentment_views_templates/contents/edit.html.erb",
     "lib/generators/contentment/contentment_views_templates/contents/index.html.erb",
@@ -37,7 +38,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{contentment}
   s.rubygems_version = %q{1.3.7}
-  s.summary = %q{Dead simple content management.}
+  s.summary = %q{Rails Engine for simple content management.}
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
