@@ -17,11 +17,10 @@ and run
 	
 ==Use Contentment
 	rails generate contentment
+	rails g contentment_views 
 	rake db:migrate
 This will create the Content model and a migration to add the contents table to your database, if it doesn't already exist.
-It will also create contents_controller.rb for you with all the CRUD already done.
-	rails g contentment_views 
-This will create the views to manage your Content.  
+It will also create contents_controller.rb for you with all the CRUD already done, and create the views to manage your Content.  
 
 Fire up the server and you're ready to go.  
 
