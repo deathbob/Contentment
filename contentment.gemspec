@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{contentment}
-  s.version = "0.6.1"
+  s.version = "0.7.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Bob Larrick"]
-  s.date = %q{2011-04-18}
+  s.date = %q{2011-09-21}
   s.description = %q{Rails Engine for simple content management.  See readme on github for details.}
   s.email = %q{larrick@gmail.com}
   s.extra_rdoc_files = [
@@ -37,11 +37,10 @@ Gem::Specification.new do |s|
   s.homepage = %q{https://github.com/deathbob/Contentment}
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{contentment}
-  s.rubygems_version = %q{1.3.7}
+  s.rubygems_version = %q{1.3.9.2}
   s.summary = %q{Rails Engine for simple content management.}
 
   if s.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
